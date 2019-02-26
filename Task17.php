@@ -15,12 +15,10 @@ function countUniqChars($string)
     $length = mb_strlen($string);
     $result = '';
 
-    for ($i = 0; $i <= $length; $i++)
-    {
+    for ($i = 0; $i <= $length; $i++) {
         $elem = $string[$i];
-        $unique = preg_match('#'.$elem.'#', $result);
-        if($unique == 0)
-        {
+        $unique = preg_match('#' . $elem . '#', $result);
+        if ($unique == 0) {
             $result .= $elem;
         }
     }

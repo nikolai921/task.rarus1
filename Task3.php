@@ -10,16 +10,13 @@
 
 $number = -123;
 
-function reverse(int $number) : int
+function reverse(int $number): int
 {
-    if($number > 0)
-    {
+    if ($number > 0) {
         $result = strrev($number);
-    } else
-    {
-        $result = abs(strrev($number))*-1;
+    } else {
+        $result = abs(strrev($number)) * -1;
     }
-
 
 
     return $result;
@@ -27,4 +24,5 @@ function reverse(int $number) : int
 
 
 echo reverse($number);
-<?php
+<?
+php

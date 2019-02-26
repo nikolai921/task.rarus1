@@ -8,7 +8,7 @@
  * (который может быть любой глубины вложенности) значение по указанным ключам.
  */
 
-$keyData = ['hosts', 0];
+$keyData = ['user', 'ubuntu'];
 $data = [
     'user' => 'ubuntu',
     'hosts' => [
@@ -17,18 +17,22 @@ $data = [
     ]
 ];
 
-function getIn($data, $keyData)
-{
-    foreach($keyData as $elem)
-    {
-        if (array_key_exists($elem, $data) != false) {
-            $data = $data[$elem];
-        } else {
-            $data = null;
-        }
+function getIn($data, $keyData) {
 
+    foreach ($keyData as $elem) {
+        if(is_array($data)){
+            if(array_key_exists($elem, $data))
+            {
+                $data = $data[$elem];
+                $result = $data[$elem];
+            } else {
+                $result = null;
+            }
+        } else {
+            $result = null;
+        }
     }
-    return $data;
+    return $result;
 }
 
 print_r(getIn($data, $keyData));

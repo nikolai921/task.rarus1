@@ -15,11 +15,10 @@ $temperatures = [37.5, 34, 39.3, 40, 38.7, 41.5];
 
 function calculateAverage($array)
 {
-    if(empty($array))
-    {
+    if (empty($array)) {
         $result = null;
     } else {
-        $result = array_sum($array)/count($array);
+        $result = array_sum($array) / count($array);
         return $result;
     }
 

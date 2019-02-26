@@ -14,13 +14,11 @@ $string = 'radarq';
 
 function revers($string)
 {
-    $length = floor(mb_strlen($string)/2);
+    $length = floor(mb_strlen($string) / 2);
     $flag = true;
 
-    for($i = 1, $j = -1; $i <= $length || $flag !== false; $i++, $j--)
-    {
-        if($string[$i] !== $string[$j])
-        {
+    for ($i = 1, $j = -1; $i <= $length || $flag !== false; $i++, $j--) {
+        if ($string[$i] !== $string[$j]) {
             $flag = false;
         }
     }

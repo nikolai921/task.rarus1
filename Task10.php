@@ -19,13 +19,10 @@ function isContinuousSequence($array)
     $length = count($array);
     $flag = true;
 
-    for($i = 1;$i < $length && $flag == true; $i++)
-    {
-        if(($array[$i] > $array[$i - 1]))
-        {
+    for ($i = 1; $i < $length && $flag == true; $i++) {
+        if (($array[$i] > $array[$i - 1])) {
             $flag = true;
-        } else
-        {
+        } else {
             $flag = false;
         }
     }

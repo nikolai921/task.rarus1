@@ -18,9 +18,8 @@ function buildDefinitionList($data)
 {
     $string = '<dl>';
 
-    foreach ($data as $elem)
-    {
-        $string .= '<dt>'.$elem[0].'</dt><dd>'.$elem[1].'</dd>';
+    foreach ($data as $elem) {
+        $string .= '<dt>' . $elem[0] . '</dt><dd>' . $elem[1] . '</dd>';
     }
 
     $string .= '<dl>';

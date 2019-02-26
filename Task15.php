@@ -18,8 +18,7 @@ function makeCensored($string, $wordChange, $symbolChange)
 {
     $result = $string;
 
-    foreach ($wordChange as $elem)
-    {
+    foreach ($wordChange as $elem) {
         $result = str_replace($elem, $symbolChange, $result);
     }
 

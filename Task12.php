@@ -13,30 +13,24 @@ $number = [];
 
 function getSameParity($array)
 {
-   if(!empty($array))
-   {
+    if (!empty($array)) {
 
-        if($array[0] % 2 == 0)
-        {
-            foreach($array as $elem)
-            {
-                if($elem % 2 == 0)
-                {
+        if ($array[0] % 2 == 0) {
+            foreach ($array as $elem) {
+                if ($elem % 2 == 0) {
                     $result[] = $elem;
                 }
             }
-        } else
-        {
-            foreach($array as $elem)
-            {
-                if($elem % 2 !== 0)
-                {
+        } else {
+            foreach ($array as $elem) {
+                if ($elem % 2 !== 0) {
                     $result[] = $elem;
                 }
             }
         }
 
-    return $result;
+        return $result;
     }
 }
+
 print_r(getSameParity($number));

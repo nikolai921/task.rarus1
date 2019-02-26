@@ -16,13 +16,11 @@ $names = ['john', 'smith', 'karl'];
 
 function swap($names, $number)
 {
-    if(!empty($names[$number - 1]) && !empty($names[$number + 1]))
-    {
+    if (!empty($names[$number - 1]) && !empty($names[$number + 1])) {
         $result = $names;
         $result[$number + 1] = $names[$number - 1];
         $result[$number - 1] = $names[$number + 1];
-    } else
-    {
+    } else {
         $result = $names;
     }
 

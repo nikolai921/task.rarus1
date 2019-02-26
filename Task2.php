@@ -13,9 +13,9 @@
 $string = 'mam';
 
 function revers($string)
-{ $revers = strrev($string);
-    if($string == $revers)
-    {
+{
+    $revers = strrev($string);
+    if ($string == $revers) {
         $result = true;
     } else {
         $result = false;

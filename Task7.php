@@ -17,8 +17,7 @@ $names = ['john', 'smith', 'karl'];
 
 function addPrefix($array, $prefix)
 {
-    foreach($array as $key => $elem)
-    {
+    foreach ($array as $key => $elem) {
         $newNames[$key] = $prefix . ' ' . $elem;
     }
 

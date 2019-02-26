@@ -4,6 +4,8 @@
  * User: nik
  * Date: 26.02.19
  * Time: 6:11
+ * Реализуйте функцию bubbleSort, которая сортирует массив используя пузырьковую сортировку.
+ * Постарайтесь не подглядывать в текст теории и попробуйте воспроизвести алгоритм по памяти.
  */
 
 $data = [3, 10, 4, 3];
@@ -12,28 +14,23 @@ function bubbleSort($data)
 {
     $count = count($data);
 
-    $flag = 0;
-
-    for($i = 0, $j = 1; $j < $count; $i++, $j++)
+    for($i = 0; $i < $count; $i++)
     {
-        if($data[$i] > $data[$j])
+        for($j = 0; $j < $count; $j++)
         {
-            $flag = 1;
-            $var = $data[$j];
-            $data[$j] = $data[$i];
-            $data[$i] = $var;
+            if ($data[$i] < $data[$j]) {
+                $var = $data[$j];
+                $data[$j] = $data[$i];
+                $data[$i] = $var;
+            }
         }
-    }
 
-    if($flag == 1)
-    {
-        bubbleSort($data);
     }
-
-    return $data;
+        return $data;
 }
 
 print_r(bubbleSort($data));
+
 
 
 
