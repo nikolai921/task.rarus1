@@ -8,7 +8,7 @@
  * сколько символов (уникальных символов) использовано в этой строке.
  */
 
-$string = 'yyayyyybkj';
+$string = '';
 
 function countUniqChars($string)
 {

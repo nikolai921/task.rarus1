@@ -9,8 +9,8 @@
  * пересечение. Задачу реализовать двумя способами - используя штатные функции, и перебором элементов массивов
  */
 
-$data1 = [10, 11, 24, 28];
-$data2 = [10, 13, 14, 18, 24, 28, 30];
+$data1 = [];
+$data2 = [];
 
 /**
  * Решение за счет штатных функций
@@ -18,7 +18,14 @@ $data2 = [10, 13, 14, 18, 24, 28, 30];
 
 function getIntersectionOfSortedArr($array1, $array2)
 {
-    $result = array_intersect($array1, $array2);
+    if(empty($array1) || empty($array2))
+    {
+        $result = 0;
+    } else
+    {
+        $result = array_intersect($array1, $array2);
+
+    }
     return $result;
 }
 
@@ -29,14 +36,21 @@ print_r(getIntersectionOfSortedArr($data1, $data2));
  */
 function getIntersectionOfSortedArray($array1, $array2)
 {
-    $result = [];
-    foreach ($array1 as $elem) {
-        foreach ($array2 as $elems) {
-            if ($elem == $elems) {
-                $result[] = $elem;
+    if(empty($array1) || empty($array2))
+    {
+        $result = 0;
+    } else
+    {
+        $result = [];
+        foreach ($array1 as $elem) {
+            foreach ($array2 as $elems) {
+                if ($elem == $elems) {
+                    $result[] = $elem;
+                }
             }
         }
     }
+
     return $result;
 }
 
