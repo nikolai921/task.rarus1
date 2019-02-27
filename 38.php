@@ -21,9 +21,7 @@ $emails = [
     'vovan@hotmail.com',
 ];
 
-function getFreeDomainsCount($emails)
-{
-    $FREE_EMAIL_DOMAINS = [
+define("FREE_EMAIL_DOMAINS", [
         'hitmail.com',
         'rxdoc.biz',
         'cox.com',
@@ -3774,11 +3772,15 @@ function getFreeDomainsCount($emails)
         'zydecofan.com',
         'zzn.com',
         'zzom.co.uk',
-    ];
+    ]);
 
+
+
+function getFreeDomainsCount($emails)
+{
     foreach ($emails as $elem) {
         $domen = preg_replace('#(?:\w+@)#', '', $elem);
-        if (in_array($domen, $FREE_EMAIL_DOMAINS)) {
+        if (in_array($domen, FREE_EMAIL_DOMAINS)) {
             $result[] = $domen;
         }
     }

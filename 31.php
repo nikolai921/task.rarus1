@@ -7,16 +7,25 @@
  * Реализуйте функцию union, которая находит объединение всех переданных массивов.
  */
 
-$data = [['a', 3, false], [true, false, 3], [false, 5, 8]];
+$data = [[3, 2], [2, 2, 1]];
 
-function union($data)
+function union(...$data)
 {
-    $common = [];
-    foreach ($data as $elem) {
-        $common = array_merge($common, $elem);
-    }
 
-    return array_values(array_unique($common));
+    if(count($data) == 1)
+    {
+        $result = $data[0];
+    } else {
+
+        $common = [];
+        foreach ($data as $elem)
+        {
+            $common = array_merge($common, $elem);
+        }
+
+        $result = array_values(array_unique($common));
+    }
+    return $result;
 }
 
-print_r(union($data));
+print_r(union([3, 2], [2, 2, 1]));

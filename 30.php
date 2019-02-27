@@ -8,17 +8,15 @@
  * Если функции не передать ни одного аргумента, то она должна вернуть null.
  */
 
-$data = [0];
 
-function average($data)
+function average(...$array)
 {
-    if(empty($data))
-    {
+    if (empty($array)) {
         $result = null;
     } else {
-        $result = array_sum($data)/count($data);
+        $result = array_sum($array) / count($array);
     }
     return $result;
 }
 
-print_r(average($data));
+print_r(average());

@@ -21,6 +21,9 @@ function wordsCount($string)
         $result = array_count_values($world);
         unset($result['']);
 
+    } else
+    {
+        $result = [];
     }
     return $result;
 

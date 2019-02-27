@@ -10,13 +10,20 @@
 
 function sayPrimeOrNot($number)
 {
-    for ($i = 2; $i <= sqrt($number); $i++) {
-        if ($number % $i == 0) {
-            return false;
-        } else {
-            return true;
+    if(empty($number))
+    {
+        return false;
+    } else
+    {
+        for ($i = 2; $i <= sqrt($number); $i++) {
+            if ($number % $i == 0) {
+                return false;
+            } else {
+                return true;
+            }
         }
     }
+
 }
 
 function say($result)
@@ -29,7 +36,7 @@ function say($result)
     return $res;
 }
 
-$number = 59;
+$number = 0;
 
 $PrimeOrNot = sayPrimeOrNot($number);
 

@@ -9,9 +9,7 @@
  */
 
 $data = [
-    'user' => 'ubuntu',
-    'cores' => 4,
-    'os' => 'linux',
+    ['none']
 ];
 
 $dataKey = ['user', 'os'];
