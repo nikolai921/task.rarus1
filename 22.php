@@ -20,34 +20,36 @@ $data = [
 function getIn($data, $keyData)
 {
 
-
     if (!empty($keyData)) {
         $keySearch = array_shift($keyData);
 //        echo $keySearch;
-//        print_r($data);
 
         if (is_array($data)) {
             if (array_key_exists($keySearch, $data)) {
 
                 $tmp = $data[$keySearch];
-                $result = $tmp;
+//                $result = $data[$keySearch];
                 $data = $tmp;
 
+//                print_r($result);
+            } else {
+                $result = null;
             }
+        } else {
+            $result = null;
         }
 
     }
-//    print_r($keyData);
 
-    if (!empty($keyData)) {
+    if (empty($keyData) || $result === null) {
+        return $result;
+    } else {
         getIn($data, $keyData);
     }
-
-    return $result;
 
 }
 
 
-print_r(getIn($data, $keyData));
+print_r(getIn($data, ['hosts', 1, 'name']));
 
 
