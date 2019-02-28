@@ -39,7 +39,7 @@ function getGirlFriends($data)
     foreach ($data as $elem) {
         foreach ($elem['friends'] as $friend) {
             if ($friend['gender'] == 'female') {
-                $result[] = $friend['name'];
+                $result[] = $friend;
             }
         }
 

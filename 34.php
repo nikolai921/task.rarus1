@@ -13,25 +13,30 @@ $users = [
     ['name' => 'Sam', 'birthday' => '1999-11-22'],
     ['name' => 'Rob', 'birthday' => '1975-01-11'],
     ['name' => 'Sansa', 'birthday' => '2001-03-20'],
-    ['name' => 'Tisha', 'birthday' => '1992-02-27']
+    ['name' => 'Tisha', 'birthday' => '1992-02-27'],
 ];
 
 
-function getSortedNames($data, $search=2)
+function getSortedNames($data, $search = 1)
 {
     foreach ($data as $elem) {
-    $date = strtotime($elem['birthday']);
-    $user = $elem['name'];
+        $date = strtotime($elem['birthday']);
+        $user = $elem['name'];
         $newData[$user] = $date;
     }
 
     asort($newData);
     $result = array_slice($newData, 0, $search);
 
-    foreach($result as $key => $elem){
-        $result[$key] = date('d.m.Y', $elem);
+    foreach ($result as $key => $elem) {
+
+        foreach ($data as $elem) {
+            if ($elem['name'] == $key) {
+                $old[] = $elem;
+            }
+        }
     }
-    return $result;
+    return $old;
 }
 
-print_r(getSortedNames($users, $search=1));
+print_r(getSortedNames($users, 2));

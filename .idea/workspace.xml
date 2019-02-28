@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36ee79ee-e4f4-450b-a13c-e98a36308be9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/17.php" beforeDir="false" afterPath="$PROJECT_DIR$/17.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/18.php" beforeDir="false" afterPath="$PROJECT_DIR$/18.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/19.php" beforeDir="false" afterPath="$PROJECT_DIR$/19.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/20.php" beforeDir="false" afterPath="$PROJECT_DIR$/20.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/22.php" beforeDir="false" afterPath="$PROJECT_DIR$/22.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/23.php" beforeDir="false" afterPath="$PROJECT_DIR$/23.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/27.php" beforeDir="false" afterPath="$PROJECT_DIR$/27.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/28.php" beforeDir="false" afterPath="$PROJECT_DIR$/28.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/29.php" beforeDir="false" afterPath="$PROJECT_DIR$/29.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/31.php" beforeDir="false" afterPath="$PROJECT_DIR$/31.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/32.php" beforeDir="false" afterPath="$PROJECT_DIR$/32.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/33.php" beforeDir="false" afterPath="$PROJECT_DIR$/33.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/34.php" beforeDir="false" afterPath="$PROJECT_DIR$/34.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/35.php" beforeDir="false" afterPath="$PROJECT_DIR$/35.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/36.php" beforeDir="false" afterPath="$PROJECT_DIR$/36.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/40.php" beforeDir="false" afterPath="$PROJECT_DIR$/40.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,10 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/33.php">
+        <entry file="file://$PROJECT_DIR$/40.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="300">
+              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -74,6 +65,10 @@
         <option value="$PROJECT_DIR$/31.php" />
         <option value="$PROJECT_DIR$/32.php" />
         <option value="$PROJECT_DIR$/33.php" />
+        <option value="$PROJECT_DIR$/34.php" />
+        <option value="$PROJECT_DIR$/35.php" />
+        <option value="$PROJECT_DIR$/36.php" />
+        <option value="$PROJECT_DIR$/40.php" />
       </list>
     </option>
   </component>
@@ -135,12 +130,12 @@
       <updated>1551142337487</updated>
       <workItem from="1551142351257" duration="11466000" />
       <workItem from="1551200894091" duration="5125000" />
-      <workItem from="1551314015767" duration="5442000" />
+      <workItem from="1551314015767" duration="7252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22033000" />
+    <option name="totallyTimeSpent" value="23843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1080" extended-state="6" />
@@ -317,8 +312,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/33.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="21" column="13" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/34.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/35.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/36.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/37.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/38.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#502#95564#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/39.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="46" column="9" selection-end-line="57" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/40.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
         </state>
       </provider>
     </entry>

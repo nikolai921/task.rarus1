@@ -31,20 +31,17 @@ $users = [
     ],
 ];
 
-$search = 'children';
-
-
 function getChildren($data)
 {
     $result = [];
 
     foreach ($data as $elem) {
-        foreach ($elem['children'] as $child) {
-            $result[] = $child;
+        foreach ($elem['children'] as $elems) {
+            $result[] = $elems;
         }
 
     }
     return $result;
 }
 
-print_r(getChildren($users, $search));
+print_r(getChildren($users));

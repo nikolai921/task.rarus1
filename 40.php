@@ -10,7 +10,7 @@
 
 $data = [['3', 2], 0, 5, 11];
 
-function without($data)
+function without(...$data)
 {
     $place_of_search = array_shift($data);
 
@@ -25,4 +25,4 @@ function without($data)
 }
 
 
-print_r(without($data));
+print_r(without([3, 4, 10, 4, 'true'], 4));
