@@ -15,7 +15,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
-
 //Устанавливаем доступы к базе данных:
 $host = 'localhost';
 $user = 'root';
@@ -28,25 +27,40 @@ $link = mysqli_connect($host, $user, $password, $db_name);
 //Устанавливаем кодировку:
 mysqli_query($link, "SET NAMES 'utf8'");
 
-$date = strtotime('23-10-1999');
-echo $date;
 
+$insert = ["INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'",
+"INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'",
+"INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'",
+"INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'",
+"INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'"];
 
+print_r($insert);
 
-$query = "SELECT * FROM users1 WHERE birthday > DATE('1999-10-23') ORDER BY LIMIT 1,3 ";
+function insertUser($link, $insert)
+{
+    foreach($insert as $elem)
+    {
+        $tamp = htmlspecialchars($elem);
 
-function insertUser($link, $query)
+        $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
+    }
+
+}
+
+//insertUser($link, $insert);
+
+$query = "
+CREATE TABLE cars(
+user_first_nam VARCHAR(255),
+brand VARCHAR(255),
+model VARCHAR(255)
+)";
+
+function createTable($link, $query)
 {
     $tamp = htmlspecialchars($query);
 
     $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
-
-    for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row)
-    {
-        ;
-    }
-
-    return $data;
 }
 
-print_r(insertUser($link, $query));
+//createTable($link, $query);

@@ -1,17 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nik
- * Date: 26.02.19
- * Time: 17:00
- * Запрос, который удаляет пользователя с именем Sansa Запрос, который вставляет в базу пользователя с
- * именем Arya и почтой arya@winter.com Запрос, который устанавливает флаг manager в true для пользователя с
- * емейлом tirion@got.com.
- */
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
-
 
 //Устанавливаем доступы к базе данных:
 $host = 'localhost';
@@ -25,12 +15,32 @@ $link = mysqli_connect($host, $user, $password, $db_name);
 //Устанавливаем кодировку:
 mysqli_query($link, "SET NAMES 'utf8'");
 
+
+//$query = "
+//CREATE TABLE users(
+//user_first_nam VARCHAR(255),
+//brand VARCHAR(255),
+//model VARCHAR(255)
+//)";
+
+
+function createTable($link, $query)
+{
+    $tamp = htmlspecialchars($query);
+
+    $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
+}
+
+//createTable($link, $query);
+
+
+
+
 $update = "UPDATE users SET manager=true WHERE email='tirion@got.com'";
 
 $delete = "DELETE FROM users WHERE first_name='Sansa'";
 
-$insert = "INSERT INTO users SET first_name='Arya' email='arya@winter.com'";
-
+$insert = "INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'";
 
 function insertUser($link, $query)
 {
@@ -55,5 +65,5 @@ function updateUser($link, $query)
 }
 
 insertUser($link, $insert);
-deleteUser($link, $delete);
-updateUser($link, $update);
+//deleteUser($link, $delete);
+//updateUser($link, $update);

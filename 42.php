@@ -26,7 +26,6 @@ mysqli_query($link, "SET NAMES 'utf8'");
 //Запрос
 //$query = "
 // CREATE TABLE course_members(
-// id INT(100) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 // user_id INT,
 // course_id INT,
 // created_at TIMESTAMP
@@ -34,19 +33,17 @@ mysqli_query($link, "SET NAMES 'utf8'");
 
 //$query = "
 // CREATE TABLE courses(
-// id INT(100) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 // name VARCHAR(255),
 // body TEXT,
 // created_at timestamp
 // )";
 
-$query = "
- CREATE TABLE users(
- id INT(100) NOT NULL AUTO_INCREMENT PRIMARY KEY,
- first_name VARCHAR(255),
- email VARCHAR(255),
- manager boolean
- )";
+//$query = "
+// CREATE TABLE users(
+// user_first_nam VARCHAR(255),
+// brand VARCHAR(255),
+// model VARCHAR(255)
+// )";
 
 
 function createTable($link, $query)
