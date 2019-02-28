@@ -5,11 +5,10 @@
  * Date: 26.02.19
  * Time: 17:00
  * Составьте запрос, который извлекает все записи из таблицы юзер по следующим правилам:
-
-Пользователи должны быть рождены позже 23 октября 1999 года. Поле birthday.
-Выборка отсортирована в алфавитном порядке по полю first_name
-Нужно извлечь только три записи
-
+ *
+ * Пользователи должны быть рождены позже 23 октября 1999 года. Поле birthday.
+ * Выборка отсортирована в алфавитном порядке по полю first_name
+ * Нужно извлечь только три записи
  */
 
 error_reporting(E_ALL);
@@ -32,8 +31,7 @@ $date = strtotime('23-10-1999');
 echo $date;
 
 
-
-$query = "SELECT * FROM users1 WHERE birthday > DATE('1999-10-23') ORDER BY LIMIT 1,3 ";
+$query = "SELECT * FROM users1 WHERE birthday > DATE('1999-10-23') ORDER BY first_name LIMIT 1,3";
 
 function insertUser($link, $query)
 {
@@ -41,8 +39,7 @@ function insertUser($link, $query)
 
     $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
 
-    for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row)
-    {
+    for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row) {
         ;
     }
 

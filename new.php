@@ -16,13 +16,11 @@ $link = mysqli_connect($host, $user, $password, $db_name);
 mysqli_query($link, "SET NAMES 'utf8'");
 
 
-//$query = "
-//CREATE TABLE users(
-//user_first_nam VARCHAR(255),
-//brand VARCHAR(255),
-//model VARCHAR(255)
-//)";
-
+$query = "CREATE TABLE users (
+    first_name varchar(255),
+    email varchar(255),
+    birthday timestamp
+);
 
 function createTable($link, $query)
 {

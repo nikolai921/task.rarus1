@@ -14,13 +14,12 @@ function wordsCount($path)
     $string = file_get_contents($path);
     if (!empty($string)) {
         $world = explode(' ', $string);
-        foreach($world as $elem)
-        { echo ' ' . $elem;
-          $preg[] = preg_replace('#([а-яА-ЯЁёa-zA-Z])#iu', '$1', $elem);
-
+        foreach($world as $elem){
+//        { echo ' ' . $elem;
+//          $preg[] = preg_replace('#([а-яА-ЯЁёa-zA-Z])#iu', '$1', $elem);
+            $var = lcfirst($elem);
+            $preg[] = trim($var, " \t\n\r\0\x0B.,!:?;-()/");
         }
-        
-
         $result = array_count_values($preg);
         unset($result['']);
 

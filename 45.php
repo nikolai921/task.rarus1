@@ -29,29 +29,31 @@ mysqli_query($link, "SET NAMES 'utf8'");
 
 
 $insert = ["INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'",
-"INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'",
-"INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'",
-"INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'",
-"INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6'"];
+    "INSERT INTO cars SET user_first_name='Petr', brand='BMV', model='X6'",
+    "INSERT INTO cars SET user_first_name='Vasia', brand='BMV', model='X6'",
+    "INSERT INTO cars SET user_first_name='Alex', brand='BMV', model='X6'",
+    "INSERT INTO cars SET user_first_name='Maks', brand='BMV', model='X6'"];
 
-print_r($insert);
+//print_r($insert);
 
 function insertUser($link, $insert)
 {
     foreach($insert as $elem)
-    {
+    { print_r($elem);
         $tamp = htmlspecialchars($elem);
+
+
 
         $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
     }
 
 }
 
-//insertUser($link, $insert);
+insertUser($link, $insert);
 
 $query = "
 CREATE TABLE cars(
-user_first_nam VARCHAR(255),
+user_first_name VARCHAR(255),
 brand VARCHAR(255),
 model VARCHAR(255)
 )";
