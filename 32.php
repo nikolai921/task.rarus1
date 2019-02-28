@@ -13,10 +13,17 @@ $string = '';
 function slugify($string)
 {
 
-    $trim = trim($string);
+    if (empty($string)) {
+        $result = '';
+    } else {
 
-    return preg_replace('#\s+#', '-', $trim);
+        $trim = trim($string);
+
+        $result = preg_replace('#\s+#', '-', $trim);
+        return strtolower($result);
+
+    }
 
 }
 
-print_r(slugify($string));
+print_r(slugify(''));

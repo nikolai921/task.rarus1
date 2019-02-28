@@ -18,29 +18,25 @@ $data2 = [];
 
 function getIntersectionOfSortedArr($array1, $array2)
 {
-    if(empty($array1) || empty($array2))
-    {
+    if (empty($array1) || empty($array2)) {
         $result = 0;
-    } else
-    {
+    } else {
         $result = array_intersect($array1, $array2);
 
     }
     return $result;
 }
 
-print_r(getIntersectionOfSortedArr($data1, $data2));
+print_r(getIntersectionOfSortedArr([10, 11, 24], [10, 13, 14, 18, 24, 30]));
 
 /**
  * Решение за счет перебора массива
  */
 function getIntersectionOfSortedArray($array1, $array2)
 {
-    if(empty($array1) || empty($array2))
-    {
+    if (empty($array1) || empty($array2)) {
         $result = 0;
-    } else
-    {
+    } else {
         $result = [];
         foreach ($array1 as $elem) {
             foreach ($array2 as $elems) {
@@ -54,4 +50,4 @@ function getIntersectionOfSortedArray($array1, $array2)
     return $result;
 }
 
-print_r(getIntersectionOfSortedArr($data1, $data2));
+print_r(getIntersectionOfSortedArr([10, 11, 24], [10, 13, 14, 18, 24, 30]));

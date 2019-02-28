@@ -9,7 +9,7 @@
  */
 
 $data = [
-    ['none']
+    ['none'],
 ];
 
 $dataKey = ['user', 'os'];

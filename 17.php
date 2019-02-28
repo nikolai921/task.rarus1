@@ -8,21 +8,26 @@
  * сколько символов (уникальных символов) использовано в этой строке.
  */
 
-$string = '';
+$string = 'yyab';
 
 function countUniqChars($string)
 {
-    $length = mb_strlen($string);
-    $result = '';
+    if (empty($string)) {
+        $count = 0;
+    } else {
+        $length = mb_strlen($string);
+        $result = '';
 
-    for ($i = 0; $i <= $length; $i++) {
-        $elem = $string[$i];
-        $unique = preg_match('#' . $elem . '#', $result);
-        if ($unique == 0) {
-            $result .= $elem;
+        for ($i = 0; $i < $length; $i++) {
+            $elem = $string[$i];
+            $unique = preg_match('#' . $elem . '#', $result);
+            if ($unique == 0) {
+                $result .= $elem;
+            }
         }
+        $count = mb_strlen($result);
     }
-    $count = mb_strlen($result);
+
     return $count;
 }
 

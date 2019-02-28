@@ -9,12 +9,10 @@
  */
 
 
-
 function wordsCount($path)
 {
     $string = file_get_contents($path);
-    if(!empty($string))
-    {
+    if (!empty($string)) {
         $world = explode(' ', $string);
 
         $result = array_count_values($world);

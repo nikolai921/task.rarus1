@@ -14,18 +14,17 @@ $string = '  one      two       one     ';
 
 function wordsCount($string)
 {
-    if(!empty($string))
-    {
+    if (!empty($string)) {
         $world = explode(' ', $string);
 
         $result = array_count_values($world);
         unset($result['']);
 
-    } else
-    {
+    } else {
         $result = [];
     }
     return $result;
 
 }
-print_r(wordsCount($string));
+
+print_r(wordsCount(''));

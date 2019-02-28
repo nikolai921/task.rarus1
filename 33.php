@@ -8,18 +8,15 @@
  * (или null если строка пустая). Запишите созданную функцию в переменную $last.
  */
 
-$string = 'd';
 
-function lastLetter($string)
-{
+$last = function ($string) {
     if (empty($string)) {
-        $result = null;
+        $last = null;
     } else {
-        $result = $string[-1];
+        $last = $string[-1];
     }
-    return $result;
-}
+    return $last;
+};
 
-$last = lastLetter($string);
 
-print_r($last);
+print_r($last('kids'));

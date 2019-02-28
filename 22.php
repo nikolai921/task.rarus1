@@ -13,8 +13,8 @@ $data = [
     'user' => 'ubuntu',
     'hosts' => [
         ['name' => 'web1'],
-        ['name' => 'web2']
-    ]
+        ['name' => 'web2'],
+    ],
 ];
 
 function getIn($data, $keyData)

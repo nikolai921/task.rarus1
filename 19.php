@@ -21,4 +21,4 @@ function checkIfBalanced($string)
     return $result;
 }
 
-print_r(checkIfBalanced($string));
+print_r(checkIfBalanced('(5 + 6) * (7 + 8)/(4 + 3)'));

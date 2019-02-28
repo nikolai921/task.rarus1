@@ -12,14 +12,12 @@ $data = [[3, 2], [2, 2, 1]];
 function union(...$data)
 {
 
-    if(count($data) == 1)
-    {
+    if (count($data) == 1) {
         $result = $data[0];
     } else {
 
         $common = [];
-        foreach ($data as $elem)
-        {
+        foreach ($data as $elem) {
             $common = array_merge($common, $elem);
         }
 
@@ -28,4 +26,4 @@ function union(...$data)
     return $result;
 }
 
-print_r(union([3, 2], [2, 2, 1]));
+print_r(union(['a', 3, false], [true, false, 3], [false, 5, 8]));

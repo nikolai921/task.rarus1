@@ -8,16 +8,12 @@
  * Постарайтесь не подглядывать в текст теории и попробуйте воспроизвести алгоритм по памяти.
  */
 
-$data = [];
-
 function bubbleSort($data)
 {
     $count = count($data);
 
-    for($i = 0; $i < $count; $i++)
-    {
-        for($j = 0; $j < $count; $j++)
-        {
+    for ($i = 0; $i < $count; $i++) {
+        for ($j = 0; $j < $count; $j++) {
             if ($data[$i] < $data[$j]) {
                 $var = $data[$j];
                 $data[$j] = $data[$i];
@@ -26,10 +22,10 @@ function bubbleSort($data)
         }
 
     }
-        return $data;
+    return $data;
 }
 
-print_r(bubbleSort($data));
+print_r(bubbleSort([3, 10, 4, 3]));
 
 
 
