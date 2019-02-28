@@ -20,6 +20,7 @@ $data = [
 function getIn($data, $keyData)
 {
 
+
     if (!empty($keyData)) {
         $keySearch = array_shift($keyData);
 //        echo $keySearch;
@@ -40,6 +41,12 @@ function getIn($data, $keyData)
         }
 
     }
+
+    /**
+     *  В крайнем if(), не определяется ключевая переменная $result, в чем может быть причина
+     * т.к. весь алгоритм производит нужные вычисления, и что самое важное до данного if()
+     * переменная так же видна.
+     */
 
     if (empty($keyData) || $result === null) {
         return $result;
