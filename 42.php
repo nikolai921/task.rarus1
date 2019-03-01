@@ -10,17 +10,14 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
-//Устанавливаем доступы к базе данных:
-$host = 'localhost';
-$user = 'root';
-$password = '13579';
-$db_name = 'practiceRarus';
-
+$connect_DB = function ($host = 'localhost', $user = 'root', $password = '13579', $db_name = 'practiceRarus') {
 //Соединяемся с базой данных используя наши доступы:
-$link = mysqli_connect($host, $user, $password, $db_name);
-
+    $link = mysqli_connect($host, $user, $password, $db_name);
 //Устанавливаем кодировку:
-mysqli_query($link, "SET NAMES 'utf8'");
+    mysqli_query($link, "SET NAMES 'utf8'");
+
+    return $link;
+};
 
 
 //Запрос
@@ -53,7 +50,7 @@ function createTable($link, $query)
     $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
 }
 
-createTable($link, $query);
+createTable($connect_DB(), $query);
 
 
 

@@ -8,4 +8,12 @@
  * в каждом году (из тех что есть в birthday) по следующим правилам:
  */
 
-$query = "SELECT DATE_FORMAT(birthday, '%Y') as year, count(birthday) as count  FROM users8 GROUP BY birthday HAVING birthday != NULL";
+/**
+ * DESC - обратный порядок, убывание
+ * ASC - прямой порядок
+ */
+
+$sql = <<<SQL
+SELECT DATE_FORMAT(birthday, '%Y') as year, count(birthday) as count FROM users WHERE birthday IS NOT NULL GROUP BY DATE_FORMAT(birthday, '%Y') ORDER BY year ASC;
+SQL;
+

@@ -10,4 +10,7 @@
 
  */
 
-$query = "SELECT count(house='stark') as count FROM users GROUP BY house HAVING house='stark'";
+$sql = <<<SQL
+SELECT count(house) as count FROM users GROUP BY house HAVING house='stark';
+SQL;
+

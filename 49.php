@@ -1,15 +1,21 @@
 <?php
-$connect_DB = function ($host = 'localhost', $user = 'root', $password = '13579', $db_name = 'practiceRarus') {
-//Соединяемся с базой данных используя наши доступы:
-    $link = mysqli_connect($host, $user, $password, $db_name);
-//Устанавливаем кодировку:
-    mysqli_query($link, "SET NAMES 'utf8'");
+/**
+ * Created by PhpStorm.
+ * User: nik
+ * Date: 01.03.19
+ * Time: 5:56
+ *Составьте запрос, который извлекает из базы данных все имена (first_name) пользователей,
+ * отсортированных по дате рождения в обратном порядке. Те записи у которых нет даты рождения,
+ * должны быть в конце списка.
+ *
+ */
 
-    return $link;
-};
+/**
+* DESC - обратный порядок
+* ASC - прямой порядок
+*/
 
-$query = "SELECT first_name FROM users ORDER BY first_name DESC";
+$sql = <<<SQL
+SELECT first_name FROM users ORDER BY first_name DESC;
+SQL;
 
-$tamp = htmlspecialchars($query);
-
-$result = mysqli_query($link, $tamp) or die(mysqli_error($link));

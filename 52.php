@@ -8,4 +8,12 @@
  * house из таблицы users отсортированные по возрастанию
  */
 
-$query = "SELECT DISTINCT house FROM users ORDER BY house ASC";
+/**
+ * DESC - обратный порядок, убывание
+ * ASC - прямой порядок
+ */
+
+$sql = <<<SQL
+SELECT DISTINCT house FROM users ORDER BY house ASC;
+SQL;
+

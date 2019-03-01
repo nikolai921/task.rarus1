@@ -8,4 +8,13 @@
  * Составьте запрос, который извлекает все записи из таблицы users по следующим правилам:
  */
 
-$query = "SELECT * FROM users WHERE birthday < DATE('2002-10-03') ORDER BY first_name ASC LIMIT 2,3";
+/**
+ * DESC - обратный порядок, убывание
+ * ASC - прямой порядок
+ */
+
+$sql = <<<SQL
+SELECT * FROM users WHERE birthday < DATE('2002-10-03') ORDER BY first_name ASC LIMIT 2,3
+SQL;
+
+

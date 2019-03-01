@@ -10,42 +10,18 @@
 
  */
 
-$connect_DB = function ($host = 'localhost', $user = 'root', $password = '13579', $db_name = 'practiceRarus') {
-//Соединяемся с базой данных используя наши доступы:
-    $link = mysqli_connect($host, $user, $password, $db_name);
-//Устанавливаем кодировку:
-    mysqli_query($link, "SET NAMES 'utf8'");
-
-    return $link;
-};
-
-
-/**
- *  Первый запрос таблица users
- */
-
-$query = "
+$sql = <<<SQL
 CREATE TABLE users(
 id INT(100) AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(255) NOT NULL UNIQUE,
 email VARCHAR(255) NOT NULL,
 created_at VARCHAR(255) NOT NULL
-)";
+);
 
-/**
- *  Второй запрос таблица topics
- */
+CREATE TABLE topics (
+ id bigint AUTO_INCREMENT PRIMARY KEY, 
+ user_id bigint REFERENCES users(id), 
+ body text, created_at TIMESTAMP NOT NULL
+);
+SQL;
 
-$query = "
-CREATE TABLE topics(
-id INT(100) AUTO_INCREMENT PRIMARY KEY,
-user_id INT NOT NULL,
-body VARCHAR(255) NOT NULL,
-created_at VARCHAR(255) NOT NULL,
-FOREIGN  KEY (user_id)
-REFERENCES users (id)
-)";
-
-$tamp = htmlspecialchars($query);
-
-$result = mysqli_query($connect_DB(), $tamp) or die(mysqli_error($connect_DB()));

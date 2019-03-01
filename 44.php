@@ -31,7 +31,7 @@ $date = strtotime('23-10-1999');
 echo $date;
 
 
-$query = "SELECT * FROM users1 WHERE birthday > DATE('1999-10-23') ORDER BY first_name LIMIT 1,3";
+$query = "SELECT * FROM users WHERE birthday > DATE('1999-10-23') ORDER BY first_name ASC LIMIT 3";
 
 function insertUser($link, $query)
 {

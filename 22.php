@@ -29,7 +29,7 @@ function getIn($data, $keyData)
             if (array_key_exists($keySearch, $data)) {
 
                 $tmp = $data[$keySearch];
-//                $result = $data[$keySearch];
+                $result = $data[$keySearch];
                 $data = $tmp;
 
 //                print_r($result);
@@ -48,7 +48,10 @@ function getIn($data, $keyData)
      * переменная так же видна.
      */
 
-    if (empty($keyData) || $result === null) {
+
+    if (empty($keyData)) {
+//        print_r(empty($keyData));
+//        print_r($result);
         return $result;
     } else {
         getIn($data, $keyData);
@@ -56,7 +59,6 @@ function getIn($data, $keyData)
 
 }
 
-
-print_r(getIn($data, ['hosts', 1, 'name']));
+ print_r(getIn($data, ['hosts', 1, 'name']));
 
 
