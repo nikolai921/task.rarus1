@@ -15,10 +15,10 @@ function union(...$data)
     if (count($data) == 1) {
         $result = $data[0];
     } else {
-
         $common = [];
         foreach ($data as $elem) {
-            $common = array_merge($common, $elem);
+            $var = array_merge($common, $elem);
+            $common = $var;
         }
 
         $result = array_values(array_unique($common));
@@ -26,4 +26,3 @@ function union(...$data)
     return $result;
 }
 
-print_r(union(['a', 3, false], [true, false, 3], [false, 5, 8]));

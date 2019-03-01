@@ -44,4 +44,3 @@ function getChildren($data)
     return $result;
 }
 
-print_r(getChildren($users));

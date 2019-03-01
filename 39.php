@@ -55,4 +55,3 @@ function getManWithLessFriends($users)
 
 }
 
-print_r(getManWithLessFriends($users));

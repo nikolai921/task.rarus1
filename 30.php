@@ -19,4 +19,3 @@ function average(...$array)
     return $result;
 }
 
-print_r(average());

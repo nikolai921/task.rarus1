@@ -38,5 +38,5 @@ function getDifference($data1, $data2)
 
 }
 
-print_r(getDifference([2, 1, 5, 7, 1, 8, 3], [2, 3]));
+
 

@@ -25,4 +25,3 @@ function without(...$data)
 }
 
 
-print_r(without([3, 4, 10, 4, 'true'], 4));

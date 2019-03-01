@@ -33,4 +33,4 @@ function getMensCountByYear($data)
     return array_count_values($result);
 }
 
-print_r(getMensCountByYear($users));
+

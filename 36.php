@@ -47,4 +47,4 @@ function getGirlFriends($data)
     return $result;
 }
 
-print_r(getGirlFriends($users));
+

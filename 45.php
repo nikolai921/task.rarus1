@@ -39,7 +39,7 @@ $insert = ["INSERT INTO cars SET user_first_name='Kiril', brand='BMV', model='X6
 function insertUser($link, $insert)
 {
     foreach($insert as $elem)
-    { print_r($elem);
+    {
         $tamp = htmlspecialchars($elem);
 
 

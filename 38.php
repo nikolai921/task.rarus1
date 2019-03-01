@@ -3789,4 +3789,3 @@ function getFreeDomainsCount($emails)
 
 }
 
-print_r(getFreeDomainsCount($emails));

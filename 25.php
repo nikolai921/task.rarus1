@@ -33,4 +33,3 @@ function getSortedNames($data, $search)
     return $listName;
 }
 
-print_r(getSortedNames($users, $search));

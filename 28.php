@@ -28,4 +28,3 @@ function wordsCount($path)
 
 }
 
-print_r(wordsCount($argv[1]));

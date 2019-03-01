@@ -14,7 +14,8 @@ function sayPrimeOrNot($number)
     if (empty($number)) {
         return false;
     } else {
-        for ($i = 2; $i <= sqrt($number); $i++) {
+        $sqrt = sqrt($number);
+        for ($i = 2; $i <= $sqrt; $i++) {
             if ($number % $i == 0) {
                 return false;
             } else {
@@ -39,5 +40,5 @@ $number = 0;
 
 $PrimeOrNot = sayPrimeOrNot(4);
 
-print_r(say($PrimeOrNot));
+
 

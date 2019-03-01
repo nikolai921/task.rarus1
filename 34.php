@@ -28,7 +28,7 @@ function getSortedNames($data, $search = 1)
     asort($newData);
     $result = array_slice($newData, 0, $search);
 
-    foreach ($result as $key => $elem) {
+    foreach ($result as $key => $elems) {
 
         foreach ($data as $elem) {
             if ($elem['name'] == $key) {
@@ -39,4 +39,4 @@ function getSortedNames($data, $search = 1)
     return $old;
 }
 
-print_r(getSortedNames($users, 2));
+

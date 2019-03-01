@@ -19,4 +19,3 @@ $last = function ($string) {
 };
 
 
-print_r($last('kids'));

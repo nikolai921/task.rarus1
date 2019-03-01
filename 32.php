@@ -26,4 +26,3 @@ function slugify($string)
 
 }
 
-print_r(slugify(''));
