@@ -13,23 +13,34 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
 
-//Устанавливаем доступы к базе данных:
-$host = 'localhost';
-$user = 'root';
-$password = '13579';
-$db_name = 'practiceRarus';
-
+$connect_DB = function ($host = 'localhost', $user = 'root', $password = '13579', $db_name = 'practiceRarus') {
 //Соединяемся с базой данных используя наши доступы:
-$link = mysqli_connect($host, $user, $password, $db_name);
-
+    $link = mysqli_connect($host, $user, $password, $db_name);
 //Устанавливаем кодировку:
-mysqli_query($link, "SET NAMES 'utf8'");
+    mysqli_query($link, "SET NAMES 'utf8'");
 
-$update = "UPDATE users SET manager=true WHERE email='tirion@got.com'";
+    return $link;
+};
 
-$delete = "DELETE FROM users WHERE first_name='Sansa'";
+$update = <<<SQL
+UPDATE users SET manager=true WHERE email='tirion@got.com';
+SQL;
 
-$insert = "INSERT INTO users SET first_name='Arya' email='arya@winter.com'";
+$delete = <<<SQL
+DELETE FROM users WHERE first_name='Sansa';
+SQL;
+
+$insert = <<<SQL
+INSERT INTO users SET first_name='Arya', email='arya@winter.com';
+SQL;
+
+
+
+//$update = "UPDATE users SET manager=true WHERE email='tirion@got.com'";
+//
+//$delete = "DELETE FROM users WHERE first_name='Sansa'";
+//
+//$insert = "INSERT INTO users SET first_name='Arya' email='arya@winter.com'";
 
 
 function insertUser($link, $query)
@@ -54,6 +65,6 @@ function updateUser($link, $query)
     $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
 }
 
-insertUser($link, $insert);
-deleteUser($link, $delete);
-updateUser($link, $update);
+insertUser($connect_DB(), $insert);
+deleteUser($connect_DB(), $delete);
+updateUser($connect_DB(), $update);

@@ -19,8 +19,6 @@ $connect_DB = function ($host = 'localhost', $user = 'root', $password = '13579'
     return $link;
 };
 
-
-//Запрос
 //$query = "
 // CREATE TABLE course_members(
 // user_id INT,
@@ -36,7 +34,7 @@ $connect_DB = function ($host = 'localhost', $user = 'root', $password = '13579'
 // )";
 
 //$query = "
-// CREATE TABLE users(
+// CREATE TABLE users22(
 // user_first_nam VARCHAR(255),
 // brand VARCHAR(255),
 // model VARCHAR(255)
