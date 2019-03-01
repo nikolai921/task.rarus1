@@ -14,31 +14,28 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
-$connect_DB = function ($host = 'localhost', $user = 'root', $password = '13579', $db_name = 'practiceRarus') {
-//Соединяемся с базой данных используя наши доступы:
-    $link = mysqli_connect($host, $user, $password, $db_name);
-//Устанавливаем кодировку:
-    mysqli_query($link, "SET NAMES 'utf8'");
 
-    return $link;
-};
+//Соединяемся с базой данных используя наши доступы:
+$link = mysqli_connect('localhost', 'root', '13579', 'practiceRarus');
+//Устанавливаем кодировку:
+mysqli_query($link, "SET NAMES 'utf8'");
+
 
 $query = <<<SQL
-SELECT * FROM users5 WHERE birthday > DATE('1999-10-23') ORDER BY first_name ASC LIMIT 3;
+SELECT * FROM users WHERE birthday > 1990-10-23 ORDER BY first_name ASC LIMIT 3;
 SQL;
 
 function insertUser($link, $query)
 {
-//    $tamp = htmlspecialchars($query);
+    $tamp = mysqli_real_escape_string($link, $query);
 
-    $result = mysqli_query($link, $query) or die(mysqli_error($link));
+    $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
 
-    for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row)
-    {
-        ;
-    }
+    for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row) {
+    };
+
 
     return $data;
 }
 
-print_r(insertUser($connect_DB(), $query));
+print_r(insertUser($link, $query));

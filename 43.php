@@ -12,47 +12,34 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
-
-$connect_DB = function ($host = 'localhost', $user = 'root', $password = '13579', $db_name = 'practiceRarus') {
 //Соединяемся с базой данных используя наши доступы:
-    $link = mysqli_connect($host, $user, $password, $db_name);
+    $link = mysqli_connect('localhost', 'root', '13579', 'practiceRarus');
 //Устанавливаем кодировку:
     mysqli_query($link, "SET NAMES 'utf8'");
 
-    return $link;
-};
-
 $update = <<<SQL
-UPDATE users SET manager=true WHERE email='tirion@got.com';
+UPDATE users5 SET manager = true WHERE email = petya;
 SQL;
 
 $delete = <<<SQL
-DELETE FROM users WHERE first_name='Sansa';
+DELETE FROM users5 WHERE first_name = Sansa;
 SQL;
 
 $insert = <<<SQL
-INSERT INTO users SET first_name='Arya', email='arya@winter.com';
+INSERT INTO users5 SET first_name = Arya, email = vanya;
 SQL;
-
-
-
-//$update = "UPDATE users SET manager=true WHERE email='tirion@got.com'";
-//
-//$delete = "DELETE FROM users WHERE first_name='Sansa'";
-//
-//$insert = "INSERT INTO users SET first_name='Arya' email='arya@winter.com'";
 
 
 function insertUser($link, $query)
 {
-    $tamp = htmlspecialchars($query);
+    $tamp = mysqli_real_escape_string($link, $query);
 
     $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
 }
 
 function deleteUser($link, $query)
 {
-    $tamp = htmlspecialchars($query);
+    $tamp = mysqli_real_escape_string($link, $query);
 
     $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
 }
@@ -60,11 +47,11 @@ function deleteUser($link, $query)
 
 function updateUser($link, $query)
 {
-    $tamp = htmlspecialchars($query);
+    $tamp = mysqli_real_escape_string($link, $query);
 
     $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
 }
 
-insertUser($connect_DB(), $insert);
-deleteUser($connect_DB(), $delete);
-updateUser($connect_DB(), $update);
+insertUser($link, $insert);
+deleteUser($link, $delete);
+updateUser($link, $update);
