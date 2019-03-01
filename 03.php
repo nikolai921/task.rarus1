@@ -24,5 +24,4 @@ function reverse(int $number): int
 
 
 echo reverse($number);
-<?
-php
+

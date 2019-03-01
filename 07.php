@@ -24,6 +24,3 @@ function addPrefix($array, $prefix)
     return $newNames;
 }
 
-$result = addPrefix($names, 'Mr');
-
-print_r($result);

@@ -18,7 +18,7 @@ function genDiff($array1, $array2)
     foreach ($merge as $key => $elem) {
         $condition1 = array_key_exists($key, $array1);
         $condition2 = array_key_exists($key, $array2);
-        if ($condition1 !== trye && $condition2 === true) {
+        if ($condition1 !== true && $condition2 === true) {
             $result[$key] = 'added';
         }
         if ($condition1 === true && $condition2 !== true) {
@@ -37,4 +37,3 @@ function genDiff($array1, $array2)
     return $result;
 }
 
-print_r(genDiff($array1, $array2));

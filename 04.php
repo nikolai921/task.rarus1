@@ -21,4 +21,3 @@ function swap(&$a, &$b)
     return $result;
 }
 
-print_r(swap($a, $b));

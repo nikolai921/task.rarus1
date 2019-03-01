@@ -15,7 +15,7 @@ ini_set('display_errors', 'on');
 $cities = ['moscow', 'london', 'berlin', 'porto'];
 
 
-function get($array, int $index, $static = null)
+function get($array,  $index, $static = null)
 {
     if (empty($array[$index])) {
         $city = $static;
@@ -25,4 +25,3 @@ function get($array, int $index, $static = null)
     return $city;
 }
 
-echo get($cities, 5, 'praga');

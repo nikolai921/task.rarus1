@@ -22,4 +22,3 @@ function discriminant($a, $b, $c)
     return $result;
 }
 
-print_r(discriminant(4, 2, 7));

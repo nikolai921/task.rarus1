@@ -28,4 +28,3 @@ function pick($data, $dataKey)
     return $result;
 }
 
-print_r(pick($data, $dataKey));

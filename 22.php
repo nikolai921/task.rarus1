@@ -8,22 +8,11 @@
  * (который может быть любой глубины вложенности) значение по указанным ключам.
  */
 
-$keyData = ['hosts', 1, 'name'];
-$data = [
-    'user' => 'ubuntu',
-    'hosts' => [
-        ['name' => 'web1'],
-        ['name' => 'web2'],
-    ],
-];
-
 function getIn($data, $keyData)
 {
 
-
     if (!empty($keyData)) {
         $keySearch = array_shift($keyData);
-//        echo $keySearch;
 
         if (is_array($data)) {
             if (array_key_exists($keySearch, $data)) {
@@ -32,7 +21,6 @@ function getIn($data, $keyData)
                 $result = $data[$keySearch];
                 $data = $tmp;
 
-//                print_r($result);
             } else {
                 $result = null;
             }
@@ -42,23 +30,15 @@ function getIn($data, $keyData)
 
     }
 
-    /**
-     *  В крайнем if(), не определяется ключевая переменная $result, в чем может быть причина
-     * т.к. весь алгоритм производит нужные вычисления, и что самое важное до данного if()
-     * переменная так же видна.
-     */
-
-
     if (empty($keyData)) {
-//        print_r(empty($keyData));
-//        print_r($result);
         return $result;
-    } else {
-        getIn($data, $keyData);
     }
 
+    $result = getIn($data, $keyData);
+    return $result;
+    
 }
 
- print_r(getIn($data, ['hosts', 1, 'name']));
+print_r(getIn($data, ['name']));
 
 
