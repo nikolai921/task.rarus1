@@ -5,23 +5,21 @@
  * Date: 02.03.19
  * Time: 16:05
  * Реализуйте функцию rrmdir, удаляющую директорию рекурсивно, то есть вместе со всем своим содержимым.
+ *
+ * @param $directory
  */
-
 
 
 function removeDir($directory)
 {
-    $files = aaray_diff(scandir($directory), ['..', '.']);
+    $files = array_diff(scandir($directory, SCANDIR_SORT_NONE), ['..', '.']);
 
-    foreach($files as $files)
-    {
+    foreach ($files as $file) {
         $path = $directory . '/' . $file;
 
-        if(is_dir($path))
-        {
+        if (is_dir($path)) {
             removeDir($path);
-        } else
-        {
+        } else {
             unlink($path);
         }
     }
@@ -29,4 +27,4 @@ function removeDir($directory)
     rmdir($directory);
 }
 
-removeDir($directory);
+removeDir('pm');
