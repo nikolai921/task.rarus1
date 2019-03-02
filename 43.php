@@ -13,45 +13,77 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
 //Соединяемся с базой данных используя наши доступы:
-    $link = mysqli_connect('localhost', 'root', '13579', 'practiceRarus');
-//Устанавливаем кодировку:
-    mysqli_query($link, "SET NAMES 'utf8'");
+$link = mysqli_connect('localhost', 'root', '1', 'practiceRarus');
 
-$update = <<<SQL
-UPDATE users5 SET manager = true WHERE email = petya;
-SQL;
+printf("Изначальная кодировка: %s\n", mysqli_character_set_name($link));
 
-$delete = <<<SQL
-DELETE FROM users5 WHERE first_name = Sansa;
-SQL;
-
-$insert = <<<SQL
-INSERT INTO users5 SET first_name = Arya, email = vanya;
-SQL;
-
-
-function insertUser($link, $query)
-{
-    $tamp = mysqli_real_escape_string($link, $query);
-
-    $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
+if (!mysqli_set_charset($link, "utf8")) {
+    printf("Ошибка при загрузке набора символов utf8: %s\n", mysqli_error($link));
+    exit();
+} else {
+    printf("Текущий набор символов: %s\n", mysqli_character_set_name($link));
 }
 
-function deleteUser($link, $query)
-{
-    $tamp = mysqli_real_escape_string($link, $query);
+/*
+ * В задачи передается массив данных по которым необходимо сделать запрос
+ */
 
-    $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
+$array = [
+    'insert' => ['first_name' => 'Arya', 'email' => 'arya@winter.com'],
+    'delete' => ['first_name' => 'Sansa'],
+    'update' => ['email' => 'tirion@got.com'],
+];
+
+function insertUser($link, $array)
+{
+    if (!empty($array)) {
+        foreach ($array as $key => $elem) {
+            if ($key == 'insert') {
+                $first_name = mysqli_real_escape_string($link, $elem['first_name']);
+                $email = mysqli_real_escape_string($link, $elem['email']);
+            }
+        }
+    }
+    $insert = <<<SQL
+INSERT INTO users (first_name, email) VALUE ('$first_name', '$email');
+SQL;
+
+    $result = mysqli_query($link, $insert) or die(mysqli_error($link));
+}
+
+function deleteUser($link, $array)
+{
+    if (!empty($array)) {
+        foreach ($array as $key => $elem) {
+            if ($key == 'delete') {
+                $first_name = mysqli_real_escape_string($link, $elem['first_name']);
+            }
+        }
+    }
+    $delete = <<<SQL
+DELETE FROM users WHERE first_name = '$first_name';
+SQL;
+
+    $result = mysqli_query($link, $delete) or die(mysqli_error($link));
 }
 
 
-function updateUser($link, $query)
+function updateUser($link, $array)
 {
-    $tamp = mysqli_real_escape_string($link, $query);
+    if (!empty($array)) {
+        foreach ($array as $key => $elem) {
+            if ($key == 'update') {
+                $email = mysqli_real_escape_string($link, $elem['email']);
+            }
+        }
+    }
+    $update = <<<SQL
+UPDATE users SET manager = true WHERE email = '$email';
+SQL;
 
-    $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
+    $result = mysqli_query($link, $update) or die(mysqli_error($link));
 }
 
-insertUser($link, $insert);
-deleteUser($link, $delete);
-updateUser($link, $update);
+insertUser($link, $array);
+deleteUser($link, $array);
+updateUser($link, $array);

@@ -15,9 +15,16 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
 //Соединяемся с базой данных используя наши доступы:
-$link = mysqli_connect('localhost', 'root', '13579', 'practiceRarus');
-//Устанавливаем кодировку:
-mysqli_query($link, "SET NAMES 'utf8'");
+$link = mysqli_connect('localhost', 'root', '1', 'practiceRarus');
+
+printf("Изначальная кодировка: %s\n", mysqli_character_set_name($link));
+
+if (!mysqli_set_charset($link, "utf8")) {
+    printf("Ошибка при загрузке набора символов utf8: %s\n", mysqli_error($link));
+    exit();
+} else {
+    printf("Текущий набор символов: %s\n", mysqli_character_set_name($link));
+}
 
 /*
  * Задача реализована на проверку наличия имя Пользователя в таблицы,

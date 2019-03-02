@@ -12,17 +12,28 @@ ini_set('display_errors', 'on');
 
 
 //Соединяемся с базой данных используя наши доступы:
-$link = mysqli_connect('localhost', 'root', '13579', 'practiceRarus');
-//Устанавливаем кодировку:
-mysqli_query($link, "SET NAMES 'utf8'");
+$link = mysqli_connect('localhost', 'root', '1', 'practiceRarus');
 
+printf("Изначальная кодировка: %s\n", mysqli_character_set_name($link));
 
-$query = "CREATE TABLE course_members(user_id INT, course_id INT, created_at TIMESTAMP)";
+if (!mysqli_set_charset($link, "utf8")) {
+    printf("Ошибка при загрузке набора символов utf8: %s\n", mysqli_error($link));
+    exit();
+} else {
+    printf("Текущий набор символов: %s\n", mysqli_character_set_name($link));
+}
 
-$query = "CREATE TABLE courses(name VARCHAR(255), body TEXT, created_at timestamp)";
+$course_members = <<<SQL
+CREATE TABLE course_members(user_id INT, course_id INT, created_at TIMESTAMP)
+SQL;
 
-$query = "CREATE TABLE users(user_first_nam VARCHAR(255), brand VARCHAR(255), model VARCHAR(255))";
+$courses = <<<SQL
+CREATE TABLE courses(name VARCHAR(255), body TEXT, created_at timestamp)
+SQL;
 
+$users = <<<SQL
+CREATE TABLE users(user_first_nam VARCHAR(255), brand VARCHAR(255), model VARCHAR(255))
+SQL;
 
 function createTable($link, $query)
 {
@@ -31,5 +42,6 @@ function createTable($link, $query)
     $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
 }
 
-createTable($link, $query);
-
+createTable($link, $course_members);
+createTable($link, $courses);
+createTable($link, $users);

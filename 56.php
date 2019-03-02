@@ -11,9 +11,6 @@
 
 $sql = <<<SQL
 START TRANSACTION;
-SELECT @A:=users.id FROM users WHERE first_name = 'Tirion';
-INSERT INTO friendship SET user1_id=@A;
-SELECT @B:=users.id FROM users WHERE first_name = 'Jon';
-UPDATE friendship SET user2_id=@B;
+INSERT INTO friendship (user1_id, user2_id) VALUES ((SELECT id FROM users WHERE first_name = 'Tirion'), (SELECT id FROM users WHERE first_name = 'Jon')), ((SELECT id FROM users WHERE first_name = 'Jon'), (SELECT id FROM users WHERE first_name = 'Tirion'));
 COMMIT;
 SQL;

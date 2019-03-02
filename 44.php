@@ -16,26 +16,42 @@ ini_set('display_errors', 'on');
 
 
 //Соединяемся с базой данных используя наши доступы:
-$link = mysqli_connect('localhost', 'root', '13579', 'practiceRarus');
-//Устанавливаем кодировку:
-mysqli_query($link, "SET NAMES 'utf8'");
+$link = mysqli_connect('localhost', 'root', '1', 'practiceRarus');
+
+printf("Изначальная кодировка: %s\n", mysqli_character_set_name($link));
+
+if (!mysqli_set_charset($link, "utf8")) {
+    printf("Ошибка при загрузке набора символов utf8: %s\n", mysqli_error($link));
+    exit();
+} else {
+    printf("Текущий набор символов: %s\n", mysqli_character_set_name($link));
+}
 
 
-$query = <<<SQL
-SELECT * FROM users WHERE birthday > 1990-10-23 ORDER BY first_name ASC LIMIT 3;
+$array = [
+    'param' => ['date' => '1990-10-23', 'number' => 3],
+];
+
+function selecttUser($link, $array)
+{
+    if (!empty($array)) {
+        foreach ($array as $key => $elem) {
+            if ($key == 'param') {
+                $date = mysqli_real_escape_string($link, $elem['date']);
+                $number = mysqli_real_escape_string($link, $elem['number']);
+            }
+        }
+    }
+    $insert = <<<SQL
+SELECT * FROM users WHERE DATE(birthday) > '$date' ORDER BY first_name ASC LIMIT $number;
 SQL;
 
-function insertUser($link, $query)
-{
-    $tamp = mysqli_real_escape_string($link, $query);
-
-    $result = mysqli_query($link, $tamp) or die(mysqli_error($link));
+    $result = mysqli_query($link, $insert) or die(mysqli_error($link));
 
     for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row) {
     };
 
-
     return $data;
 }
 
-print_r(insertUser($link, $query));
+print_r(selecttUser($link, $array));
