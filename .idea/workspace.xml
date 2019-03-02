@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36ee79ee-e4f4-450b-a13c-e98a36308be9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18e7fe57-c4cc-4060-a50f-22b44656cebb.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/42.php" beforeDir="false" afterPath="$PROJECT_DIR$/42.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/43.php" beforeDir="false" afterPath="$PROJECT_DIR$/43.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/44.php" beforeDir="false" afterPath="$PROJECT_DIR$/44.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/45.php" beforeDir="false" afterPath="$PROJECT_DIR$/45.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/56.php" beforeDir="false" afterPath="$PROJECT_DIR$/56.php" afterDir="false" />
-    </list>
+    <list default="true" id="36ee79ee-e4f4-450b-a13c-e98a36308be9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +41,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/44.php">
+        <entry file="file://$PROJECT_DIR$/58.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+            <state relative-caret-position="465">
+              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+              <folding>
+                <element signature="e#6#83#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,8 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Task6.php" />
-        <option value="$PROJECT_DIR$/Task8.php" />
         <option value="$PROJECT_DIR$/Task9.php" />
         <option value="$PROJECT_DIR$/Task11.php" />
         <option value="$PROJECT_DIR$/Task12.php" />
@@ -118,6 +109,8 @@
         <option value="$PROJECT_DIR$/43.php" />
         <option value="$PROJECT_DIR$/45.php" />
         <option value="$PROJECT_DIR$/44.php" />
+        <option value="$PROJECT_DIR$/57.php" />
+        <option value="$PROJECT_DIR$/58.php" />
       </list>
     </option>
   </component>
@@ -185,12 +178,12 @@
       <workItem from="1551325701371" duration="1196000" />
       <workItem from="1551399027261" duration="12823000" />
       <workItem from="1551509730861" duration="1914000" />
-      <workItem from="1551513487519" duration="11594000" />
+      <workItem from="1551513487519" duration="19016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55639000" />
+    <option name="totallyTimeSpent" value="63061000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -203,7 +196,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19210246" />
@@ -232,8 +224,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Task18.php" />
-    <entry file="file://$PROJECT_DIR$/Task17.php" />
     <entry file="file://$PROJECT_DIR$/04.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -567,8 +557,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/44.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+        <state relative-caret-position="342">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/57.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#6#83#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/58.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding>
+            <element signature="e#6#83#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
