@@ -31,8 +31,17 @@ function get(&$map, $key, $default=null)
 function set(&$map, $key, $value)
 {
     $index = crc32($key)%1000;
-    $map[$index] = $value;
+    if(array_key_exists($index,$map) === true) {
+        $result = false;
+    } else
+    {
+        $map[$index] = $value;
+        $result = true;
+    }
+    return $result;
 }
+
+
 
 
 

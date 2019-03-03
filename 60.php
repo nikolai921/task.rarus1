@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection UnserializeExploitsInspection */
 /**
  * Created by PhpStorm.
  * User: nik
@@ -42,6 +42,7 @@ function dump($file, $structure)
 
 function load($file)
 {
+    $data = '';
     if(!empty($file))
     {
         $stringData = file_get_contents($file);

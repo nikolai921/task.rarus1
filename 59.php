@@ -23,5 +23,5 @@ function grepfile($pattern, $type)
 }
 
 
-print_r(grepfile( 'privet', './*'));
+print_r(sizeof(grepfile( 'privet', './*')));
 
