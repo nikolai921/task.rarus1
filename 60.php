@@ -38,7 +38,6 @@ function dump($file, $structure)
 
 }
 
-//dump('Serializer.php', $structure);
 
 function load($file)
 {
@@ -53,4 +52,19 @@ function load($file)
 
 }
 
-print_r(load('Serializer.php'));
+
+/*
+ * Проверка истина ли утверждение $structure == $data
+ */
+
+$data = load('Serializer.php');
+
+if($data == $structure)
+{
+    $check = true;
+} else
+{
+    $check = false;
+}
+
+
