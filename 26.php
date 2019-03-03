@@ -7,3 +7,33 @@
  * Реализуйте набор функций, для работы со словарём, построенным на хеш-таблице.
  * Для простоты, наша реализация не поддерживает разрешение коллизий.
  */
+
+function make()
+{
+    return $data = [];
+}
+
+$map = make();
+
+function get(&$map, $key, $default=null)
+{
+    $index = crc32($key)%1000;
+    if(array_key_exists($index,$map) === true)
+    {
+        $result = $map[$index];
+    } else {
+        $result = $default;
+    }
+
+    return $result;
+}
+
+function set(&$map, $key, $value)
+{
+    $index = crc32($key)%1000;
+    $map[$index] = $value;
+}
+
+
+
+

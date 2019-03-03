@@ -7,7 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36ee79ee-e4f4-450b-a13c-e98a36308be9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/58.php" beforeDir="false" afterPath="$PROJECT_DIR$/58.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/26.php" beforeDir="false" afterPath="$PROJECT_DIR$/26.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +46,17 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/26.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,7 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Task12.php" />
         <option value="$PROJECT_DIR$/Task13.php" />
         <option value="$PROJECT_DIR$/Task14.php" />
         <option value="$PROJECT_DIR$/Task15.php" />
@@ -105,6 +114,7 @@
         <option value="$PROJECT_DIR$/58.php" />
         <option value="$PROJECT_DIR$/59.php" />
         <option value="$PROJECT_DIR$/60.php" />
+        <option value="$PROJECT_DIR$/26.php" />
       </list>
     </option>
   </component>
@@ -120,6 +130,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,7 +142,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,12 +182,13 @@
       <workItem from="1551325701371" duration="1196000" />
       <workItem from="1551399027261" duration="12823000" />
       <workItem from="1551509730861" duration="1914000" />
-      <workItem from="1551513487519" duration="29854000" />
+      <workItem from="1551513487519" duration="30861000" />
+      <workItem from="1551601847074" duration="1764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73899000" />
+    <option name="totallyTimeSpent" value="76670000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -190,9 +201,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19210246" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19423692" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.20903361" />
@@ -273,9 +285,6 @@
           <caret line="20" selection-end-line="35" selection-end-column="41" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/26.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/27.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -564,6 +573,13 @@
           <folding>
             <element signature="e#6#367#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/26.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
