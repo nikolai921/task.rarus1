@@ -9,8 +9,6 @@
  * Реализуйте функцию load, которая принимает на вход имя файла.
  * После этого она читает содержимое файла и проводит десериализацию.
  */
-
-
 $structure = [
     ['name' => 'Tirion', 'friends' => [
         ['name' => 'Mira', 'gender' => 'female'],
@@ -26,42 +24,24 @@ $structure = [
         ['name' => 'Taywin', 'gender' => 'male']
     ]],
 ];
-
 function dump($file, $structure)
 {
     if(!empty($structure) && !empty($file))
     {
         $stringSerialize = serialize($structure);
-
         file_put_contents($file, $stringSerialize);
     }
-
 }
 
+dump('Serializer.php', $structure);
 
 function load($file)
 {
-    $data = '';
     if(!empty($file))
     {
         $stringData = file_get_contents($file);
         $data = unserialize($stringData);
     }
-
     return $data;
-
 }
-
-/*
- * Проверка истина ли утверждение $structure == $data
- */
-
-
-if($data === $structure)
-{
-    $check = true;
-} else
-{
-    $check = false;
-}
-
+print_r(load('Serializer.php'));
