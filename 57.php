@@ -10,7 +10,7 @@
 
 function cdWay($currentDir, $targetDir)
 {
-    $elementCurrent = (explode('/', $currentDir));
+    $elementCurrent = explode('/', $currentDir);
     $elementTarget = explode('/', $targetDir);
 
     $way = '';
@@ -41,4 +41,4 @@ function cdWay($currentDir, $targetDir)
     return $way;
 }
 
-
+print_r(cdWay('/1/2/3/4/5/6/7/8/etc', '../../../../anotherpath/d/f/g'));
