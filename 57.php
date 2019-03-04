@@ -10,14 +10,14 @@
 
 function cdWay($currentDir, $targetDir)
 {
-    $elementCurrent = explode('/', $currentDir);
+    $elementCurrent = (explode('/', $currentDir));
     $elementTarget = explode('/', $targetDir);
 
     $way = '';
     $param['word'] = '';
 
     if ($elementTarget[0] == '') {
-        $way = $currentDir;
+        $way = $targetDir;
     } else {
         foreach ($elementTarget as $elem) {
             if ($elem == '.') {
@@ -30,17 +30,15 @@ function cdWay($currentDir, $targetDir)
         }
 
 
-        $flag = 1;
-        foreach ($param as $elem) {
-            if ($elem == 1) {
-                $way .= '/' . $elementCurrent[$flag];
-                $flag++;
-            }
-        }
+        $sum = array_sum($param);
+        $count = count($elementCurrent);
+        $interval = $count - $sum - 1;
+        $result = array_splice($elementCurrent, 1, $interval);
+        $way = '/' . implode('/', $result);
 
         $way .= $param['word'];
     }
     return $way;
 }
 
-print_r(cdWay('/1/2/3/4/5/6/7/8/etc', '../../../../././anotherpath/d/f/g'));
+
